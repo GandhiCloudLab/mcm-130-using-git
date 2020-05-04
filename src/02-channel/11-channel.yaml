@@ -4,7 +4,7 @@ metadata:
   name: gstore-channel
   namespace: gstore-channel-ns
   labels:
-    app: gstore-application
+    main-app: gstore-application
 spec:
   type: GitHub
   pathname: https://github.com/GandhiCloudLab/mcm-130-using-git.git
