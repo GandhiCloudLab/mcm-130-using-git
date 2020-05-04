@@ -1,30 +1,30 @@
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
-  name: {{ .Values.appName }}-web
+  name: {{ .Values.appName }}
   namespace: {{ .Values.nameSpace }}
   labels:
-    app: {{ .Values.appName }}-application
-    subname: web
+    main-app: {{ .Values.mainAppName }}
+    app: {{ .Values.appName }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ .Values.appName }}-application
-      subname: web
+      app: {{ .Values.mainAppName }}
+      app: {{ .Values.appName }}
   template:
     metadata:
       labels:
-        app: {{ .Values.appName }}-application
-        subname: web
+        app: {{ .Values.mainAppName }}
+        app: {{ .Values.appName }}
     spec:
       containers:
-        - name: container-web
-          image: "{{ .Values.imageRepositoryWeb }}:latest"
+        - name: my-container
+          image: "{{ .Values.imageRepository }}:latest"
           imagePullPolicy: Always
           ports:
             - name: http
-              containerPort: {{ .Values.serviceTargetPortWeb }}
+              containerPort: {{ .Values.serviceTargetPort }}
               protocol: TCP
             - name: https
               containerPort: 8082

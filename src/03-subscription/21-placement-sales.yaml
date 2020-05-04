@@ -4,7 +4,7 @@ metadata:
   name: gstore-sales
   namespace: gstore-subscription-ns
   labels:
-    app: gstore-application
+    main-app: gstore-application
 spec:
   clusterReplicas: 1
   clusterLabels:

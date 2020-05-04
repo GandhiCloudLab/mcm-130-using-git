@@ -6,11 +6,11 @@ metadata:
   name: gstore
   namespace: gstore-subscription-ns
   labels:
-    app: gstore-application
+    main-app: gstore-application
 spec:
   selector:
     matchExpressions:
-    - key: app
+    - key: main-app
       operator: In
       values:
       - gstore-application

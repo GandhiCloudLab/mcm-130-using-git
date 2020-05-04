@@ -4,7 +4,7 @@ metadata:
   name: gstore-sales-subscription
   namespace: gstore-subscription-ns
   labels:
-    app: gstore-application
+    main-app: gstore-application
 spec:
   channel: gstore-channel-ns/gstore-channel
   name: charts/gstore-sales       # The name of the helm chart from the repo
