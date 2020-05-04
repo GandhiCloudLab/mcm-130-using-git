@@ -9,7 +9,7 @@ spec:
   channel: gstore-channel-ns/gstore-channel
   name: charts/gstore-sales       # The name of the helm chart from the repo
   packageFilter:
-    version: ">=1.x"
+    version: "0.1.x"
   placement:
     placementRef:
       name: gstore-sales

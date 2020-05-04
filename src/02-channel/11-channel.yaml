@@ -8,3 +8,13 @@ metadata:
 spec:
   type: GitHub
   pathname: https://github.com/GandhiCloudLab/mcm-130-using-git.git
+  configRef:
+    name: insecure-skip-verify
+---
+apiVersion: v1
+data:
+  insecureSkipVerify: "true"
+kind: ConfigMap
+metadata:
+  name: insecure-skip-verify
+  namespace: gstore-channel-ns
