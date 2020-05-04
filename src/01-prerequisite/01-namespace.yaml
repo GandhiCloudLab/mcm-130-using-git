@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: gstore-channel-ns
+  labels:
+    app: gstore-application
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: gstore-subscription-ns
+  labels:
+    app: gstore-application
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: gstore-app-ns
+  labels:
+    app: gstore-application

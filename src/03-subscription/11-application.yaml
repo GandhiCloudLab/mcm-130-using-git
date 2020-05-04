@@ -1,0 +1,19 @@
+---
+# Source: gstore-subscription/templates/11-application.yaml
+apiVersion: app.k8s.io/v1beta1
+kind: Application
+metadata:
+  name: gstore
+  namespace: gstore-subscription-ns
+  labels:
+    app: gstore-application
+spec:
+  selector:
+    matchExpressions:
+    - key: app
+      operator: In
+      values:
+      - gstore-application
+  componentKinds:
+  - group: app.ibm.com
+    kind: Subscription

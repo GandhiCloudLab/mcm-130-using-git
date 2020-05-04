@@ -1,0 +1,22 @@
+apiVersion: app.ibm.com/v1alpha1
+kind: Subscription
+metadata:
+  name: gstore-purchase-subscription
+  namespace: gstore-subscription-ns
+  labels:
+    app: gstore-application
+spec:
+  channel: gstore-channel-ns/gstore-channel
+  name: charts/gstore-purchase   # The name of the helm chart from the repo
+  packageFilter:
+    version: ">=1.x"
+  placement:
+    placementRef:
+      name: gstore-purchase
+      kind: PlacementRule
+      group: app.ibm.com
+  overrides:
+  - clusterName: "/"
+    clusterOverrides:
+    - path: "metadata.namespace"
+      value: gstore-app-ns

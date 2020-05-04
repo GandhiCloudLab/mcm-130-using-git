@@ -1,0 +1,32 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: {{ .Values.appName }}-web
+  namespace: {{ .Values.nameSpace }}
+  labels:
+    app: {{ .Values.appName }}-application
+    subname: web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.appName }}-application
+      subname: web
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.appName }}-application
+        subname: web
+    spec:
+      containers:
+        - name: container-web
+          image: "{{ .Values.imageRepositoryWeb }}:latest"
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: {{ .Values.serviceTargetPortWeb }}
+              protocol: TCP
+            - name: https
+              containerPort: 8082
+              protocol: TCP
+    
