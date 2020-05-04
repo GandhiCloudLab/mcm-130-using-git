@@ -7,7 +7,8 @@ metadata:
     main-app: gstore-application
 spec:
   type: GitHub
-  pathname: https://github.com/GandhiCloudLab/mcm-130-using-git.git
+  #pathname: https://github.com/GandhiCloudLab/mcm-130-using-git.git
+  pathname: https://raw.githubusercontent.com/GandhiCloudLab/charts/master/repo/mcm-130-using-git/
   configRef:
     name: insecure-skip-verify
 ---

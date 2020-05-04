@@ -7,7 +7,7 @@ metadata:
     main-app: gstore-application
 spec:
   channel: gstore-channel-ns/gstore-channel
-  name: charts/gstore-sales       # The name of the helm chart from the repo
+  name: charts/tgz/gstore-sales       # The name of the helm chart from the repo
   packageFilter:
     version: "0.1.x"
   placement:
