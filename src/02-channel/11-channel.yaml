@@ -2,21 +2,13 @@ apiVersion: app.ibm.com/v1alpha1
 kind: Channel
 metadata:
   name: gstore-channel
-  namespace: gstore-channel-ns
+  namespace: gstore-hub-ns
   labels:
     main-app: gstore-application
 spec:
-  type: GitHub
-  pathname: https://github.com/GandhiCloudLab/mcm-130-using-git.git
-  # type: HelmRepo
-  # pathname: https://raw.githubusercontent.com/GandhiCloudLab/mcm-130-using-git/blob/master/charts/tgz
-  configRef:
-    name: insecure-skip-verify
----
-apiVersion: v1
-data:
-  insecureSkipVerify: "true"
-kind: ConfigMap
-metadata:
-  name: insecure-skip-verify
-  namespace: gstore-channel-ns
+  # type: GitHub
+  # pathname: https://github.com/GandhiCloudLab/mcm-130-using-git.git
+  type: HelmRepo
+  pathname: https://raw.githubusercontent.com/GandhiCloudLab/mcm-130-using-git/master
+  configMap:
+    insecureSkipVerify: true

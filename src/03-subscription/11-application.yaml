@@ -4,7 +4,7 @@ apiVersion: app.k8s.io/v1beta1
 kind: Application
 metadata:
   name: gstore
-  namespace: gstore-subscription-ns
+  namespace: gstore-hub-ns
   labels:
     main-app: gstore-application
 spec:

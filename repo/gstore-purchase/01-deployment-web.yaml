@@ -1,0 +1,34 @@
+---
+# Source: gstore-purchase/templates/01-deployment-web.yaml
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: gstore-purchase
+  namespace: gstore-app-ns
+  labels:
+    main-app: gstore-application
+    app: gstore-purchase
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      main-app: gstore-application
+      app: gstore-purchase
+  template:
+    metadata:
+      labels:
+        main-app: gstore-application
+        app: gstore-purchase
+    spec:
+      containers:
+        - name: my-container
+          image: "gandigit/wcare-sub-stocks:latest"
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+            - name: https
+              containerPort: 8082
+              protocol: TCP
+    

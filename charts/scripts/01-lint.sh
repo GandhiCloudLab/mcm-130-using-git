@@ -2,5 +2,5 @@
 
 cd ../
 
-helm lint gstore-sales
-helm lint gstore-purchase
+helm lint src/gstore-sales
+helm lint src/gstore-purchase

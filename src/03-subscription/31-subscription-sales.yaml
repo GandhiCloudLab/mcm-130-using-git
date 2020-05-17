@@ -2,21 +2,21 @@ apiVersion: app.ibm.com/v1alpha1
 kind: Subscription
 metadata:
   name: gstore-sales-subscription
-  namespace: gstore-subscription-ns
+  namespace: gstore-hub-ns
   labels:
     main-app: gstore-application
 spec:
-  channel: gstore-channel-ns/gstore-channel
-  name: charts/gstore-sales       # The name of the helm chart from the repo
+  channel: gstore-hub-ns/gstore-channel
+  # source: https://raw.githubusercontent.com/GandhiCloudLab/mcm-130-using-git/master/charts/tgz/
+  # source: https://github.com/GandhiCloudLab/mcm-130-using-git/tree/master/charts/tgz
+  name: gstore-sales
   packageFilter:
-    version: "0.1.0"
+    version: 0.1.0
   placement:
     placementRef:
       name: gstore-sales
       kind: PlacementRule
       group: app.ibm.com
-  overrides:
-  - clusterName: "/"
-    clusterOverrides:
-    - path: "metadata.namespace"
-      value: gstore-app-ns
+  # placement:
+  #   local: false
+    

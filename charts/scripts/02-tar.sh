@@ -2,7 +2,7 @@
 
 cd ../
 
-helm package gstore-sales
-helm package gstore-purchase
+helm package src/gstore-sales
+helm package src/gstore-purchase
 
 mv *.tgz ./tgz

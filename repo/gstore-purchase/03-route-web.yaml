@@ -1,0 +1,18 @@
+---
+# Source: gstore-purchase/templates/03-route-web.yaml
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: gstore-purchase
+  namespace: gstore-app-ns
+  labels:
+    main-app: gstore-application
+    app: gstore-purchase
+spec:
+  path: /
+  to:
+    kind: Service
+    name: gstore-purchase
+    weight: 100
+  port:
+    targetPort: my-http

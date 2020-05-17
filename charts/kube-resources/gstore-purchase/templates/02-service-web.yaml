@@ -1,0 +1,22 @@
+---
+# Source: gstore-purchase/templates/02-service-web.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: gstore-purchase
+  namespace: gstore-app-ns
+  labels:
+    main-app: gstore-application
+    app: gstore-purchase
+  annotations:
+    mcm.ibm.com/service-discovery: "{}"
+spec:
+  type: ClusterIP
+  ports:
+    - name: my-http
+      port: 
+      targetPort: 
+  selector:
+    main-app: gstore-application
+    app: gstore-purchase
+  
